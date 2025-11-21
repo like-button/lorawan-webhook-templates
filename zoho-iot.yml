@@ -1,0 +1,30 @@
+template-id: zoho-iot
+name: Zoho IoT
+description: >
+  Forward uplink messages securely to Zoho IoT.
+logo-url: https://zdblogs.zohocorp.com/sites/iot/iot-hub/files/group_12.jpg
+info-url: https://www.zoho.com/iot
+documentation-url: https://help.zoho.com/portal/en/kb/iot/devices/working-with-datastreams/articles/connectivity-guide-the-things-stack
+fields:
+  - id: endpoint
+    name: URL Param Implementation
+    description: >
+      Enter the URL Param Implementation value of your Zoho IoT Data Stream.
+      Example: https://57913xxxxx.zohoiothub.com/v1/iot/datastream/589600000147xxx?token=f5zzzzzzzzzzzz
+    secret: false
+format: json
+create-downlink-api-key: false
+base-url: "{+endpoint}"
+paths:
+  uplink-message: ""
+body:
+  uplink-message:
+    device: "{{end_device_ids.device_id}}"
+    dev_eui: "{{end_device_ids.dev_eui}}"
+    application: "{{end_device_ids.application_ids.application_id}}"
+    time: "{{received_at}}"
+    f_port: "{{data.uplink_message.f_port}}"
+    f_cnt: "{{data.uplink_message.f_cnt}}"
+    payload_raw: "{{data.uplink_message.frm_payload}}"
+    decoded_payload: "{{data.uplink_message.decoded_payload}}"
+    rx_metadata: "{{data.uplink_message.rx_metadata}}"
