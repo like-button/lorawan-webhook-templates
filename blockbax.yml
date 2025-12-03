@@ -1,7 +1,7 @@
 template-id: blockbax
 name: Blockbax
 description: Integrate with Blockbax
-logo-url: https://blockbax.com/images/logo-green.png
+logo-url: https://blockbax.com/images/blockbax-logo-green.svg
 info-url: https://blockbax.com/
 documentation-url: https://blockbax.com/docs/integrations/the-things-network/
 tts-documentation-url: https://www.thethingsindustries.com/docs/integrations/cloud-integrations/blockbax/
